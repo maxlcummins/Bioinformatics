@@ -20,5 +20,5 @@ Such investigations are important because it is increasingly recognised that ani
 
 
 For more information on One Health see the following links:
-* One Health Initiative [http://www.onehealthinitiative.com/]
-* Antimicrobial resistance: a One Health perspective [https://academic.oup.com/trstmh/article/111/6/255/4554993]
+* One Health Initiative[http://www.onehealthinitiative.com/]
+* Antimicrobial resistance: a One Health perspective[https://academic.oup.com/trstmh/article/111/6/255/4554993]
