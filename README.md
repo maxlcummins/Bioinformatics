@@ -51,9 +51,17 @@ Here is a link to a video that will get you started on the command line and teac
 
 Having a capacity to write scripts or utilise pre-existing packages in Python and/or R greatly benefits us! Both languages are very popular in (and outside of) the bioinformatics sphere, and online communities that serve to help troubleshoot disfunctional scripts and suggest programming solutions to data problems, such as [Stack Overflow](www.stackoverflow.com/), are very helpful in our thirst for programming knowledge and know-how.
 
+
+Resources for learning Python and/or R:
+* [Datacamp](https://www.datacamp.com)
+* [Coursera](https://www.coursera.org/)
+* [EdX](https://www.edx.org/)
+
+
 At the very least, basic knowledge of Python is required for the use of ARIBA, the scripts we use to process the outcoming data, and other pieces of software we use to analyse our sequences of interest.
 
 Currently, our pipelines for the generation of heatmaps and other figures utilise the R programming language.
+
 
 # Resources
 
