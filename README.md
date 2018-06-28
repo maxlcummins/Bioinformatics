@@ -33,9 +33,10 @@ After generating the above data, we typically want to generate some a phylogenet
 
 # Skills Required
 
-The first order of business, in regard to preparing for undertaking *in silico* analysis of our DNA sequence data, should be to familiarise yourself with the command line. If you're running MacOS or Linux you will have an in-built terminal, while if you're running Windows I would suggest downloading MobaXterm. Note that while MobaXterm users have the luxury of an inbuilt file transfer system, allowing you to natively upload or download from a computer cluster, Mac and Linux users will have to download a FTP client such as [FileZilla](https://filezilla-project.org/)
+The first order of business, in regard to preparing for undertaking *in silico* analysis of our DNA sequence data, should be to familiarise yourself with the command line. If you're running MacOS or Linux you will have an in-built terminal, while if you're running Windows I would suggest downloading MobaXterm. Note that while [MobaXterm](https://mobaxterm.mobatek.net/) users have the luxury of an inbuilt file transfer system, allowing you to natively upload or download from a computer cluster, Mac and Linux users will have to download a FTP client such as [FileZilla](https://filezilla-project.org/)
 
-
+Here is a link to a video that will get you started on the command line and teach you some important basics of navigating and beginning to utilise the command line.
+[Joe Collins - Intro to linux/bash](https://www.youtube.com/watch?v=oxuRxtrO2Ag)
 
 # Resources
 
