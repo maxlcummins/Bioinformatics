@@ -29,7 +29,13 @@ Essentially, the aim of the game is to characterise the genetic contents of the 
 
 The current workhorse for our genotyping is a piece of software called ARIBA. This allows the mapping of short-read sequence data to a file of reference sequences - typically these references sequences are involved in antimicrobial resistance, experimentally or epidemiologically associated with disease, or those that encode, or are associated, with mobile DNA elements that play an important role in the spread of such genes. We also use ARIBA, in combination with some custom scripts, to perform Multi-locus sequence typing, e-serotyping and phylogroup classification. These are various classification schemes we can use to assess the relatedness of different strains of E. coli. More on ARIBA later...
 
-After generating the above data, we typically want to generate some a phylogenetic tree that allows a visualisation of relatedness of the samples under study. Typically our approaches to this involve use of Phylosift or software that allows detection and comparison of single nucleotide polymorphisms (SNPS), which you can think of as the extent to which mutations have accumulated within the core genome, over time, of the samples under investigation
+After generating the above data, we typically want to generate some a phylogenetic tree that allows a visualisation of relatedness of the samples under study. Typically our approaches to this involve use of Phylosift or software that allows detection and comparison of single nucleotide polymorphisms (SNPS), the latter of which detects mutations have accumulated within the core genome, over time, of the samples under investigation, thus inferring how related they may be. Subsequently we can generate the tree using FastTree2, and visualise the tree in iTOL, figtree, or more recently, in R (with a bit of help from ggtree and friends). We then may or may not combine this tree with figures that reflect the geneotype of each sample in the tree.
+
+# Skills Required
+
+The first order of business, in regard to preparing for undertaking *in silico* analysis of our DNA sequence data, should be to familiarise yourself with the command line. If you're running MacOS or Linux you will have an in-built terminal, while if you're running Windows I would suggest downloading MobaXterm. Note that while MobaXterm users have the luxury of an inbuilt file transfer system, allowing you to natively upload or download from a computer cluster, Mac and Linux users will have to download a FTP client such as [FileZilla](https://filezilla-project.org/)
+
+
 
 # Resources
 
