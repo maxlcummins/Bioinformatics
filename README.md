@@ -10,6 +10,8 @@ I hope you find it useful...
 
 Currently we undertake microbial genetic epidemiological investigations that aim to elucidate the genetic characteristics and phylogenetic structure of microbial populations from agricultural, clinical and environmental settings. We have short-read sequence data on around a thousand or so E. coli isolates, and this number is growing fast. We also are expanding into other microbial Genera, such as Klebsiella and Proteus.
 
+![alt text](https://github.com/maxlcummins/Bioinformatics/One\ Health\ Logo.png "Image sourced from Lilongwe Wildlife Trust")
+
 
 Such investigations are important because it is increasingly recognised that animal, human and environmental microbiota are in a state of flux - many mechanisms allow for the transfer of bacteria and other microbes between these different contexts, and because of this, human, animal and evironmental health are intrinsically linked. This concept is referred as the One Health Initiative; a framework or lens through which one can approach investigations that involve the study, treatment and prevention of infectious disease. According to the One Health Initiative's webpage:
 
@@ -55,4 +57,8 @@ Currently, our pipelines for the generation of heatmaps and other figures utilis
 
 # Resources
 
+
+# References and Acknowledgements
+Some images have been scavenged from the internet to give this page some flare! If you are the owner of any images contained herein and would like me to remove them, please ask and I will do so. I have attempted, wherever possible, to give credit to the owners and authors of borrowed content.
+* One Health Image attributed to [LiLongWe Wildlife Trust](https://www.lilongwewildlife.org/clinical-project-one-health/)
 
