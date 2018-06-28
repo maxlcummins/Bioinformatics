@@ -20,5 +20,17 @@ Such investigations are important because it is increasingly recognised that ani
 
 
 For more information on One Health see the following links:
-* One Health Initiative[http://www.onehealthinitiative.com/]
-* Antimicrobial resistance: a One Health perspective[https://academic.oup.com/trstmh/article/111/6/255/4554993]
+* [One Health Initiative](http://www.onehealthinitiative.com/)
+* [Antimicrobial resistance: a One Health perspective](https://academic.oup.com/trstmh/article/111/6/255/4554993)
+
+# The Goal 
+
+Essentially, the aim of the game is to characterise the genetic contents of the strains understudy, as well as use various approaches to classifying them into phylogenetic groups that reflect their phylogenetic relatedness.
+
+The current workhorse for our genotyping is a piece of software called ARIBA. This allows the mapping of short-read sequence data to a file of reference sequences - typically these references sequences are involved in antimicrobial resistance, experimentally or epidemiologically associated with disease, or those that encode, or are associated, with mobile DNA elements that play an important role in the spread of such genes. We also use ARIBA, in combination with some custom scripts, to perform Multi-locus sequence typing, e-serotyping and phylogroup classification. These are various classification schemes we can use to assess the relatedness of different strains of E. coli. More on ARIBA later...
+
+After generating the above data, we typically want to generate some a phylogenetic tree that allows a visualisation of relatedness of the samples under study. Typically our approaches to this involve use of Phylosift or software that allows detection and comparison of single nucleotide polymorphisms (SNPS), which you can think of as the extent to which mutations have accumulated within the core genome, over time, of the samples under investigation
+
+# Resources
+
+
