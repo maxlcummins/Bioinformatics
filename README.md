@@ -1,4 +1,4 @@
-# How to Bioinformatics
+# How to Bioinformatics (In Development)
 
 Contained within this repo is some information about the Djordjevic Genomics Lab, what we do and why we think its important. It also contains some links to videos and other resources that should help in your quest toward Bioinformatic prowess!
 
