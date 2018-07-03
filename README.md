@@ -64,17 +64,26 @@ Currently, our pipelines for the generation of heatmaps and other figures utilis
 
 # Software
 
-Below is a list of software that we frequently use for genotyping (characterising genetic content),
-
-## Genotyping
-
-
+Below is a list of software that we frequently use for genotyping (characterising genetic content), annotating regions of DNA and various other applications
 
 ### ARIBA
 
-As mentioned, [ARIBA](https://github.com/sanger-pathogens/ariba) is a major tool in our genome analysis pipeline. ARIBA stands for Antimicrobial Resistance Identification By Assembly, and while its name implies it may only be used for analysis of antimicrobial resistance genes it is not limited therein. VAGs, plasmid-associated genes, custom gene databases and even be used to perform multi-locus sequence typing, serotyping and phylogrouping can be performed, though for the later two functionalities some custom scripts available at [ARIBAlord](https://github.com/maxlcummins/ARIBAlord) are recommended.
+As mentioned, [ARIBA](https://github.com/sanger-pathogens/ariba) is a major tool in our genome analysis pipeline. ARIBA stands for Antimicrobial Resistance Identification By Assembly, and while its name implies it may only be used for analysis of antimicrobial resistance genes it is not limited therein. ARIBA can be used to check for the presence of VAGs, plasmid-associated genes, custom gene databases and can even perform multi-locus sequence typing, serotyping and phylogrouping can be performed, though for the later two functionalities some custom scripts available at [ARIBAlord](https://github.com/maxlcummins/ARIBAlord) are recommended.
 
-### BLAST
+### BLASTn
+
+BLASTn is a sequence aligner that has been around since 1990. There are [command-line](https://www.ncbi.nlm.nih.gov/books/NBK279680/) and [web-based](https://blast.ncbi.nlm.nih.gov/Blast.cgi?PAGE_TYPE=BlastSearch) applications available, and depending on what kind of analysis you are interested in doing you might use either. Prior to running BLASTn you must first assemble your sequences using one of the tools mentioned in the assembly section above.
+
+#### Genotyping
+BLASTn is useful for genotyping, however it is unsuitable for determining the carriage of IS elements and other genetic elements that may have repeat regions or sequences above a certain length which appear in the genome of a sample in multiple locations, as these entities often are not assembled properly by short-read assemblers. On that note, while ARIBA runs on raw reads, BLAST requires assembled DNA sequence. To determine carriage rates of such elements a read-mapping tool like ARIBA, ISfinder or SRST2 is preferred, though it may be useful to validate genotypic data generated using read-mapping approaches.
+
+#### Genetic Epidemiology
+The web-based BLASTn portal hosted by NCBI is a useful tool in searching for sequences of interest that have been deposited in the NCBI nucleotide database by other researchers around the world. If you have a region of DNA that is of interest you can search to see if this sequence, or one similar to it, has been identified, and if so, where and when the sequence was isolated.
+
+#### Annotation
+BLASTn can be used to determine the genetic context of genes of interest. It is important to know whether AMR and VAGs are carried chromosomally or on a plasmid, for example, and we are usually also interested in how such elements are arranged. BLASTn is best employed with long-read sequence data, which better allows the determination of genetic arrangement and context.
+
+#### 
 
 
 
