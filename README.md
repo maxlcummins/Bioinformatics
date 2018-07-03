@@ -66,6 +66,18 @@ Currently, our pipelines for the generation of heatmaps and other figures utilis
 
 Below is a list of software that we frequently use for genotyping (characterising genetic content), annotating regions of DNA and various other applications
 
+## Assemblers
+
+### A5
+
+### Shovill
+
+### Unicycler
+
+### FALCON
+
+## Sequence Aligners
+
 ### ARIBA
 
 As mentioned, [ARIBA](https://github.com/sanger-pathogens/ariba) is a major tool in our genome analysis pipeline. ARIBA stands for Antimicrobial Resistance Identification By Assembly, and while its name implies it may only be used for analysis of antimicrobial resistance genes it is not limited therein. ARIBA can be used to check for the presence of VAGs, plasmid-associated genes, custom gene databases and can even perform multi-locus sequence typing, serotyping and phylogrouping can be performed, though for the later two functionalities some custom scripts available at [ARIBAlord](https://github.com/maxlcummins/ARIBAlord) are recommended.
@@ -83,7 +95,7 @@ The web-based BLASTn portal hosted by NCBI is a useful tool in searching for seq
 #### Annotation
 BLASTn can be used to determine the genetic context of genes of interest. It is important to know whether AMR and VAGs are carried chromosomally or on a plasmid, for example, and we are usually also interested in how such elements are arranged. BLASTn is best employed with long-read sequence data, which better allows the determination of genetic arrangement and context.
 
-#### 
+### 
 
 
 
