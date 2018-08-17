@@ -1,12 +1,12 @@
 #!/bin/bash
 
-# -d /shared/homes/11025234
+# -d /shared/homes/**Your_Student_Number_Here**
 #PBS -q workq 
 #PBS -l select=1:ncpus=27:mem=64gb
 
 # Send an email when this job aborts, begins or ends.
 #PBS -m abe
-#PBS -M 11025234@student.uts.edu.au
+#PBS -M **Your_Email_Here**
 
 ##      Below is the qsub job submission command for this qsub file:
 ##      ***Note, do not include '~' in the path to your read files or your path to your ARIBA database...***
