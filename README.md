@@ -106,6 +106,22 @@ BLASTn can be used to determine the genetic context of genes of interest. It is 
 ##
 
 
+# Job Submission and data processing
+
+To submit an ARIBA job you will need access to first download and prepare your databases of interest. The databases can be found below, though it is recommended to undertake these steps using ARIBA where possible. Information on how to do this can be found on the ARIBA github wiki. For custom databases, you will need to run ARIBA's prepareref step with the option --all_coding no. All supported databases should be run without this option.
+
+ARIBA jobs require relatively large computing resources, particularly if you are screening many samples for hundreds or thousands of genes. Therefore a PBS job submission script can be used for the UTS HPC, which you can access [here](https://github.com/maxlcummins/Bioinformatics/blob/master/new_ariba.qsub). Clone the Bioinformatics repository to your home directory and you should be able to run the following job submission without any issue.
+
+Note: it is important that the paths in "READ_PATH" and "REF" are pathed to as if you are accessing them from your home directory, or the job will fail. Also, the "OUT" designation is required to avoid overwriting your read files and should be informative of the database being used.
+
+```
+qsub -v READ_PATH=<your_path_to_reads_here>,REF=<your_path_to_ARIBA_prepared_DB_here>,OUT=<informative_append_here> ~/qsub/new_ariba.qsub
+```
+
+Screen for your genes of interest. We have set up support for phylogrouping and serotyping, but it is also recommended to screen for resistance genes (via Resfinder), virulence genes (via Virulencefinder), plasmid genes (via Plasmidfinder), Custom genes (via E_coli_customDB), and MLST (via ARIBAs MLST pipeline \[we recommend the Achtman scheme\].
+
+Once all of your ARIBA output is prepared (this may take some time), we recommend using ARIBAlord to combine the resulting data into a spreadsheet with which you can summarise your data for further analysis. Check the [github page](https://github.com/maxlcummins/ARIBAlord) for information on how to use it.
+
 # Resources
 
 ## Databases
