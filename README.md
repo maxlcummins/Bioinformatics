@@ -108,6 +108,34 @@ BLASTn can be used to determine the genetic context of genes of interest. It is 
 
 # Resources
 
+## Databases
+
+Nucleotide databases can be used in combination with BLAST and/or read mapping tools to genotype samples. There are many publicly available databases that may be of use. Typically, we in the Djordjevic Lab use the following:
+
+### Center for Genomic Epidemiology
+
+While the links below are for the most common databases we use, there are many others provided at the centre for genomic epidemiology.
+Click [here](https://cge.cbs.dtu.dk/services/) for a link to see what is on offer, and [here]( to navigate to a downloadable copy a database through bitbucket. To do so click the downloads tab on the left hand side of the page that will pop up after clicking the database of interest and then click 'Download repository'.
+* [Virulencefinder](https://bitbucket.org/genomicepidemiology/virulencefinder_db/get/0dd7f3105233.zip)
+* [Resfinder](https://bitbucket.org/genomicepidemiology/resfinder_db/get/a409b844aa2c.zip)
+* [Plasmidfinder](https://bitbucket.org/genomicepidemiology/plasmidfinder_db/get/591948ee56dc.zip)
+
+### ISfinder
+
+Note that [this](https://isfinder.biotoul.fr/) database can unfortunately not be downloaded, but sequences of interest can be found via searching the online database. Click 'Tools' and then 'Search' to search for a particular IS, or you can use the BLAST function
+to search for IS elements in a DNA sequence of interest.
+
+### Custom Database
+
+We also use a custom database which is available [here](https://github.com/maxlcummins/E_coli_customDB)
+
+### Other Databases:
+* CARD
+* VFDB
+
+
+
+
 
 # References and Acknowledgements
 Some images have been scavenged from the internet to give this page some flare! If you are the owner of any images contained herein and would like me to remove them, please ask and I will do so. I have attempted, wherever possible, to give credit to the owners and authors of borrowed content.
