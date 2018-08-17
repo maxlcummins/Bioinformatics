@@ -1,0 +1,11 @@
+
+#!/bin/bash
+
+# -d /shared/homes/***YOUR_STUDENT_NUMBER_HERE***
+#PBS -q smallq
+
+##      Below is the qsub job submission command for this qsub file:
+##      ***Note, do not include '~' in the path to your assemblies or your path to your blast database...***
+##      for input_genome in `ls genomedir/*.fasta`; do qsub -v DB=*Path_To_BLAST_DB*,INPUT=${input_genome},OUTPUT=${input_genome}.*Informative_append*.csv ./blast.qsub; done
+
+blastn -num_threads 2 -evalue 0.001 -db $DB -query $INPUT -out $OUTPUT -outfmt "6 qseqid stitle sseqid pident length slen sstart send qstart qend qlen mismatch gapopen evalue bitscore"
