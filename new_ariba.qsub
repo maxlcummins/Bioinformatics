@@ -1,0 +1,21 @@
+#!/bin/bash
+
+# -d /shared/homes/11025234
+#PBS -q workq 
+#PBS -l select=1:ncpus=27:mem=64gb
+
+# Send an email when this job aborts, begins or ends.
+#PBS -m abe
+#PBS -M 11025234@student.uts.edu.au
+
+##      Below is the qsub job submission command for this qsub file:
+##      ***Note, do not include '~' in the path to your read files or your path to your ARIBA database...***
+##      qsub -v READ_PATH=<path_to_read_directory>,REF=<path_to_ARIBA_DB>,OUT=<output.append> ~/<path_to_this_qsub_file>
+
+source activate ariba
+
+array=($(ls ${READ_PATH}/*.fastq.gz))
+
+for ((i=0; i<${#array[@]}; i+=2));
+do ariba run $REF ${array[i]} ${array[i+1]} ${array[i]}.${OUT}.out;
+done
