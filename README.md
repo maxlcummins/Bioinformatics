@@ -145,7 +145,20 @@ for genome in `ls ***path_to_your_genomes***/*.fasta`; do qsub -v DB=***path_To_
 
 The job should finish quickly. Repeat the above two steps for all databases you wish to screen your samples for (typically just Resfinder, Virulencefinder, Plasmidfinder and a Custom database). Be sure to change the "informative append" such that i) it is different between job runs so that the output files for one screen aren't overwritten by the output files from the subsequent screen, and ii) that you know which file is which.
 
-All the blast output files will land in the folder containing your genome assemblies, ie the path you designated in \`ls \*\*\*path_to_your_genomes\*\*\*/\*.fasta\`.
+All the blast output files will land in the folder containing your genome assemblies, ie the path you designated in
+\`ls \*\*\*path_to_your_genomes\*\*\*/\*.fasta\`. Navigate to this folder.
+
+Each BLAST output file consists of a delimited file. We want to concatenate them together for ease of processing, but first we must provide a sample ID for each of the BLAST hits detected. This command will do the trick:
+
+```for f in *.csv; do paste $f <(yes $f | head -n $(cat $f | wc -l)) > $f.new; done```
+
+Next, we can concatenate the BLAST output files into a single file we can work with more easily. Use this command to do so, but be sure to alter the name of the resulting output file to something informative that reflects the samples under investigation, the date, and any other important info.
+
+``` cat *.new > ***informative_name***.txt```
+
+Now all of your BLAST data will be in a single file. From here, we recommend filtering of your results using [BLASTlord](https://github.com/maxlcummins/BLASTlord/). BLAST data can be quite noisy, particularly because the settings we run it on are relatively unstringent. BLASTlord allows you to set cutoffs for nucleotide ID and coverage and will filter the hits appropriately, providing you with a table of hits which met the criteria and those that did not. While it originally was used for creating tables that summarised the genes present and absent in a sample, this purpose has been largely superceded by ARIBAlord and therefore using BLASTlord for this purpose is at this time not recommended. At some point I plan to update BLASTlord such that it can be used for this purpose again, but for the time being this role is unlikely to work very well without being used with a purpose built BLAST database being used for screening.
+
+To use BLASTlord, download it as a zip file and open the file appended in '.R' in R studio.
 
 
 
