@@ -108,6 +108,8 @@ BLASTn can be used to determine the genetic context of genes of interest. It is 
 
 # Job Submission and data processing
 
+## ARIBA
+
 To submit an ARIBA job you will need access to first download and prepare your databases of interest. The databases can be found below, though it is recommended to undertake these steps using ARIBA where possible. Information on how to do this can be found on the [ARIBA github wiki](https://github.com/sanger-pathogens/ariba). For custom databases, you will need to run ARIBA's prepareref step with the option --all_coding no. All supported databases should be run without this option.
 
 ARIBA jobs require relatively large computing resources, particularly if you are screening many samples for hundreds or thousands of genes. Therefore a PBS job submission script can be used for the UTS HPC, which you can access [here](https://github.com/maxlcummins/Bioinformatics/blob/master/new_ariba.qsub). Clone the Bioinformatics repository to your home directory and you should be able to run the following job submission without any issue.
@@ -121,6 +123,33 @@ qsub -v READ_PATH=<your_path_to_reads_here>,REF=<your_path_to_ARIBA_prepared_DB_
 Screen for your genes of interest. We have set up support for phylogrouping and serotyping, but it is also recommended to screen for resistance genes (via Resfinder), virulence genes (via Virulencefinder), plasmid genes (via Plasmidfinder), Custom genes (via E_coli_customDB), and MLST (via ARIBAs MLST pipeline \[we recommend the Achtman scheme\]).
 
 Once all of your ARIBA output is prepared (this may take some time), we recommend using ARIBAlord to combine the resulting data into a spreadsheet with which you can summarise your data for further analysis. Check the [github page](https://github.com/maxlcummins/ARIBAlord) for information on how to use it.
+
+## BLASTn
+
+BLAST is a very useful piece of software which we can use to try to answer a number of different research questions. Primarily, this section will focus on using BLAST on the command line to identify genes of interest and to retreive the scaffolds on which they are identified as well as the coordinates where they are specifically located. The latter is particularly useful when it comes to annotation of regions of DNA, particularly when annotating long-read sequence assemblies.
+
+BLAST is natively accessible to all users on the UTS HPC, so you should not need to install anything to use it. You will, however, need a qsub file for job submission, particularly if you are running BLAST with a large number of genes/samples. If you clone this github you can use the one called blast.qsub contained within the qsub folder, however first be sure to edit the qsub file using vim and replace any appropriate fields flagged with \*\*Your_student_number_here\*\* or \*\*Your_email_here\*\*.
+
+Upon downloading your database/s of interest, the first step required is to prepare your BLASTn database for use. You can use this command, substituting in the name of your database file. Note your database file may end in .fasta, .fa or .fsa - make sure you get the name right!
+
+
+```
+makeblastdb -in ***DB_name_here.fa*** -dbtype nucl
+```
+
+Once this is done you can run BLAST. Note that BLAST can only be run on assemblies, not on read files. You can use the following command, but be sure to change the bits flagged between three asterisks; "path_to_your_genomes", "path_to_BLAST_DB" and "Informative_append". The asterisks should be deleted, however be sure not to delete the asterisk in "\*.fasta"
+
+```
+for genome in `ls ***path_to_your_genomes***/*.fasta`; do qsub -v DB=***path_To_BLAST_DB***,INPUT=${input_genome},OUTPUT=${input_genome}.***Informative_append***.csv ./blast.qsub; done
+```
+
+The job should finish quickly. Repeat the above two steps for all databases you wish to screen your samples for (typically just Resfinder, Virulencefinder, Plasmidfinder and a Custom database). Be sure to change the "informative append" such that i) it is different between job runs so that the output files for one screen aren't overwritten by the output files from the subsequent screen, and ii) that you know which file is which.
+
+All the blast output files will land in the folder containing your genome assemblies, ie the path you designated in \`ls \*\*\*path_to_your_genomes\*\*\*/\*.fasta\`.
+
+
+
+
 
 # Resources
 
