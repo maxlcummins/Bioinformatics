@@ -166,6 +166,13 @@ To use BLASTlord, download it as a zip file and open the file appended in '.R' i
 
 # Resources
 
+## Reading Material
+
+* [Fitness Costs of Plasmids: a Limit to Plasmid Transmission](https://www.ncbi.nlm.nih.gov/pubmed/28944751) by San Millan and MacLean, 2017
+** A great review on microbial evolution in regard to the metabolic burdens
+
+* [Mobile Genetic Elements Associated with Antimicrobial Resistance](https://www.ncbi.nlm.nih.gov/pubmed/30068738) by Partridge et al, 2018
+
 ## Databases
 
 Nucleotide databases can be used in combination with BLAST and/or read mapping tools to genotype samples. There are many publicly available databases that may be of use. Typically, we in the Djordjevic Lab use the following:
