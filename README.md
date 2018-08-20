@@ -169,7 +169,7 @@ To use BLASTlord, download it as a zip file and open the file appended in '.R' i
 ## Reading Material
 
 * [Fitness Costs of Plasmids: a Limit to Plasmid Transmission](https://www.ncbi.nlm.nih.gov/pubmed/28944751) by San Millan and MacLean, 2017
-** A great review on microbial evolution in regard to the metabolic burdens
+A great review on microbial evolution in regard to the metabolic burdens
 
 * [Mobile Genetic Elements Associated with Antimicrobial Resistance](https://www.ncbi.nlm.nih.gov/pubmed/30068738) by Partridge et al, 2018
 
