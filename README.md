@@ -173,6 +173,8 @@ A great review on microbial evolution in regard to the metabolic burdens
 
 * [Mobile Genetic Elements Associated with Antimicrobial Resistance](https://www.ncbi.nlm.nih.gov/pubmed/30068738) by Partridge et al, 2018
 
+* [How to root a phylogenetic tree](http://cabbagesofdoom.blogspot.com/2012/06/how-to-root-phylogenetic-tree.html)
+
 ## Databases
 
 Nucleotide databases can be used in combination with BLAST and/or read mapping tools to genotype samples. There are many publicly available databases that may be of use. Typically, we in the Djordjevic Lab use the following:
