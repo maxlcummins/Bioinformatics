@@ -6,7 +6,7 @@
 
 # Send email on abort, begin and end. 
 #PBS -m abe 
-#PBS -M $EMAIL
+#PBS -M $STU_NO
 
 ###################################
 # Setup any input files for the run
