@@ -1,0 +1,55 @@
+# Set the resource requirements
+#PBS -l ncpus=8
+#PBS -l mem=64GB
+#PBS -l walltime=24:00:00
+#PBS -q workq
+
+# Send email on abort, begin and end. 
+#PBS -m abe 
+#PBS -M $EMAIL
+
+###################################
+# Setup any input files for the run
+###################################
+  
+
+SCRATCH="/scratch/work/${USER}_${PBS_JOBID%.*}"
+mkdir ${SCRATCH}
+
+# Change to the PBS working directory where qsub was started from.
+# Copy your input files from there to scratch.
+cd ${PBS_O_WORKDIR}
+cp -r ${READ_PATH/*.fastq.gz} ${SCRATCH}/reads
+cp -r ${REF} ${SCRATCH}
+
+	
+###############
+# Start the Job
+###############
+
+# Change to the scratch directory where you copied your 
+# input files to before you start. 
+cd ${SCRATCH}
+
+#activate environment
+source activate ariba
+
+#define array of input fastq files
+array=($(ls ${SCRATCH}/reads/*.fastq.gz))
+
+for ((i=0; i<${#array[@]}; i+=2));
+do ariba run $REF ${array[i]} ${array[i+1]} ${array[i]}.${OUT}.out;
+done 
+
+#####################################################
+# Copy results back to your own directory and cleanup
+#####################################################
+
+# Move your data back to your own directory.
+cd ${PBS_O_WORKDIR}
+mv ${SCRATCH}/reads/*${OUT}.out ${READ_PATH}
+
+# We don't want to have old directories hanging around
+# so after copying your data back remove the directory. 
+rm -r ${SCRATCH}/*
+rmdir ${SCRATCH}
