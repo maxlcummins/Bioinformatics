@@ -19,8 +19,9 @@ mkdir ${SCRATCH}
 # Change to the PBS working directory where qsub was started from.
 # Copy your input files from there to scratch.
 cd ${PBS_O_WORKDIR}
-cp -r ${READ_PATH/*.fastq.gz} ${SCRATCH}/reads
-cp -r ${REF} ${SCRATCH}
+cp -r ${PBS_O_WORKDIR}/${READ_PATH/*.fastq.gz} ${SCRATCH}/reads
+cp -r ${PBS_O_WORKDIR}/${REF} ${SCRATCH}
+
 
 	
 ###############
