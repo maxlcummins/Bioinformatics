@@ -1,6 +1,6 @@
 # Set the resource requirements
 #PBS -l ncpus=8
-#PBS -l mem=64GB
+#PBS -l mem=32GB
 #PBS -l walltime=24:00:00
 #PBS -q workq
 
@@ -19,8 +19,10 @@ mkdir ${SCRATCH}
 # Change to the PBS working directory where qsub was started from.
 # Copy your input files from there to scratch.
 cd ${PBS_O_WORKDIR}
+pwd
 cp -r ${READ_PATH/*.fastq.gz} ${SCRATCH}/reads
 cp -r ${REF} ${SCRATCH}
+ls
 
 
 	
