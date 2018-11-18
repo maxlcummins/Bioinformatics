@@ -3,7 +3,6 @@
 #PBS -l mem=64GB
 #PBS -l walltime=24:00:00
 #PBS -q workq
-#PBS -cwd
 
 # Send email on abort, begin and end. 
 #PBS -m abe 
@@ -19,9 +18,7 @@ mkdir ${SCRATCH}
 
 # Change to the PBS working directory where qsub was started from.
 # Copy your input files from there to scratch.
-cd ${PBS_O_WORKDIR}
-pwd
-ls ARIBA_databases
+#cd ${PBS_O_WORKDIR}
 cp -r ${PBS_O_WORKDIR}/${READ_PATH/*.fastq.gz} ${SCRATCH}/reads
 cp -r ${PBS_O_WORKDIR}/${REF} ${SCRATCH}
 
