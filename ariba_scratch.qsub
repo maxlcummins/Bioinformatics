@@ -23,7 +23,7 @@ cd ${PBS_O_WORKDIR} # sub in student number variable after an absolute path
 cp ${READ_PATH}/*.fastq.gz ${SCRATCH}/reads/ #removed -r and added a slash at the end of reads - 19 Nov 18
 DB="/scratch/work/${USER}_${PBS_JOBID%.*}/ARIBA_DB_${PBS_JOBID%.*}"
 mkdir ${DB}
-cp ${REF}/* ${SCRATCH}/${DB} # Added a generic DB folder to which the contents of the ARIBA DB are moved
+cp ${REF}/* ${DB} # Added a generic DB folder to which the contents of the ARIBA DB are moved
 
 
 	
