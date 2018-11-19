@@ -20,7 +20,7 @@ mkdir ${SCRATCH}/reads
 # Change to the PBS working directory where qsub was started from.
 # Copy your input files from there to scratch.
 cd ${PBS_O_WORKDIR} # sub in student number variable after an absolute path
-cp ${READ_PATH/*.fastq.gz} ${SCRATCH}/reads/ #removed -r and added a slash at the end of reads - 19 Nov 18
+cp -r ${READ_PATH/*.fastq.gz} ${SCRATCH}/reads/ #removed -r and added a slash at the end of reads - 19 Nov 18
 cp -r ${REF} ${SCRATCH}
 
 
@@ -32,7 +32,11 @@ cp -r ${REF} ${SCRATCH}
 # Change to the scratch directory where you copied your 
 # input files to before you start. 
 cd ${SCRATCH}
+echo 'Listing Scratch Directory found the following files:'
 ls
+echo 'Listing reads directory within Scratch found the following files:'
+ls reads
+
 #activate environment
 source activate ariba
 
