@@ -1,6 +1,6 @@
 # Set the resource requirements
-#PBS -l ncpus=8
-#PBS -l mem=32GB
+#PBS -l ncpus=1 # changed ncpus to 1 from 8
+#PBS -l mem=8GB # changed mem to 8 from 32
 #PBS -l walltime=24:00:00
 #PBS -q workq
 
@@ -18,11 +18,9 @@ mkdir ${SCRATCH}
 
 # Change to the PBS working directory where qsub was started from.
 # Copy your input files from there to scratch.
-cd ${PBS_O_WORKDIR}
-pwd
-cp -r ${READ_PATH/*.fastq.gz} ${SCRATCH}/reads
+cd ${PBS_O_WORKDIR} # sub in student number variable after an absolute path
+cp ${READ_PATH/*.fastq.gz} ${SCRATCH}/reads/ #removed -r and added a slash at the end of reads - 19 Nov 18
 cp -r ${REF} ${SCRATCH}
-ls
 
 
 	
@@ -33,16 +31,16 @@ ls
 # Change to the scratch directory where you copied your 
 # input files to before you start. 
 cd ${SCRATCH}
-
+ls
 #activate environment
-source activate ariba
+#source activate ariba
 
 #define array of input fastq files
-array=($(ls ${SCRATCH}/reads/*.fastq.gz))
+#array=($(ls ${SCRATCH}/reads/*.fastq.gz))
 
-for ((i=0; i<${#array[@]}; i+=2));
-do ariba run ${SCRATCH}/$REF ${array[i]} ${array[i+1]} ${array[i]}.${OUT}.out;
-done 
+#for ((i=0; i<${#array[@]}; i+=2));
+#do ariba run ${SCRATCH}/$REF ${array[i]} ${array[i+1]} ${array[i]}.${OUT}.out;
+#done 
 
 #####################################################
 # Copy results back to your own directory and cleanup
