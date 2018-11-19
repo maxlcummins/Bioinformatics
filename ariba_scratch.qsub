@@ -46,7 +46,7 @@ source activate ariba
 array=($(ls ${SCRATCH}/reads/*.fastq.gz))
 
 for ((i=0; i<${#array[@]}; i+=2));
-do ariba run ${SCRATCH}/${DB} ${array[i]} ${array[i+1]} ${array[i]}.${OUT}.out;
+do ariba run ${DB} ${array[i]} ${array[i+1]} ${array[i]}.${OUT}.out;
 done 
 
 #####################################################
