@@ -1,6 +1,8 @@
 # Set the resource requirements
-#PBS -l ncpus=1 # changed ncpus to 1 from 8
-#PBS -l mem=8GB # changed mem to 8 from 32
+#PBS -l ncpus=1 
+# changed ncpus to 1 from 8
+#PBS -l mem=8GB 
+# changed mem to 8 from 32
 #PBS -l walltime=24:00:00
 #PBS -q workq
 
