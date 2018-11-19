@@ -36,14 +36,14 @@ cp -r ${REF} ${SCRATCH}
 cd ${SCRATCH}
 ls
 #activate environment
-#source activate ariba
+source activate ariba
 
 #define array of input fastq files
-#array=($(ls ${SCRATCH}/reads/*.fastq.gz))
+array=($(ls ${SCRATCH}/reads/*.fastq.gz))
 
-#for ((i=0; i<${#array[@]}; i+=2));
-#do ariba run ${SCRATCH}/$REF ${array[i]} ${array[i+1]} ${array[i]}.${OUT}.out;
-#done 
+for ((i=0; i<${#array[@]}; i+=2));
+do ariba run ${SCRATCH}/$REF ${array[i]} ${array[i+1]} ${array[i]}.${OUT}.out;
+done 
 
 #####################################################
 # Copy results back to your own directory and cleanup
