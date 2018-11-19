@@ -17,6 +17,7 @@
 
 SCRATCH="/scratch/work/${USER}_${PBS_JOBID%.*}"
 mkdir ${SCRATCH}
+mkdir ${SCRATCH}/reads
 
 # Change to the PBS working directory where qsub was started from.
 # Copy your input files from there to scratch.
