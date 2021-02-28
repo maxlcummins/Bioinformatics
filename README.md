@@ -29,7 +29,7 @@ For more information on One Health see the following links:
 
 Essentially, the aim of the game is to characterise the genetic contents of the strains under study, as well as use various approaches to classify them into phylogenetic groups that reflect their relatedness. We can then compare these attributes of bacteria from different environments to identify potential reservoirs of antimicrobial resistance (AMR), virulence-associated genes (VAGs) and potential zoonotic pathogens.
 
-Our current workhorse for genotyping is a piece of software called [ARIBA](https://github.com/sanger-pathogens/ariba). This allows the mapping of short-read sequence data to a file of reference sequences - typically these references sequences are involved in AMR, experimentally or epidemiologically associated with disease (VAGs), or those that encode, or are associated, with mobile DNA elements that play an important role in the spread of such genes. We also use ARIBA, in combination with some custom scripts, to perform Multi-locus sequence typing, e-serotyping and phylogroup classification. These are various classification schemes we can use to assess the relatedness of different strains of E. coli. More on ARIBA later...
+Our current workhorse for genotyping is a piece of software called [abricate](https://github.com/tseeman/abricate). This is a BLAST based analysis that we can use to screen for genes of interest - typically these references sequences are involved in AMR, experimentally or epidemiologically associated with disease (VAGs), or those that encode, or are associated, with mobile DNA elements that play an important role in the spread of such genes.
 
 After generating the above data, we typically want to generate some sort of phylogenetic tree that allows a visualisation of relatedness of the samples under study. Typically our approaches to this involve use of Phylosift or software that allows detection and comparison of single nucleotide polymorphisms (SNPS), the latter of which detects mutations that have accumulated within the core genome, over time, of the samples under investigation, thus inferring how related they may be. Subsequently we can generate the tree using FastTree2, and visualise the tree in iTOL, figtree, or more recently, in R (with a bit of help from ggtree and friends). We then can combine this tree with figures that visualise the genotype of each sample in the tree.
 
@@ -57,10 +57,7 @@ Resources for learning Python and/or R:
 * [Coursera](https://www.coursera.org/)
 * [EdX](https://www.edx.org/)
 
-
-At the very least, basic knowledge of Python is required for the use of ARIBA, the scripts we use to process the outcoming data, and other pieces of software we use to analyse our sequences of interest.
-
-Currently, our pipelines for the generation of heatmaps and other figures utilise the R programming language.
+Currently, our pipelines for the generation of heatmaps and other figures utilise the R programming language. There are also other GUI-based approaches which are popular, such as the [Interactive tree of life] platform(https://itol.embl.de/) (iTOL).
 
 # Software
 
